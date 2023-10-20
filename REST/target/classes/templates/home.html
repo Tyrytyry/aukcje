@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/home.css}"/>
+    <script th:src="@{/js/home.js}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div th:each="product : ${products}">
+        <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function() {
+            addProductBox(
+                /*[[${product.id}]]*/,
+                /*[[${product.name}]]*/,
+                /*[[${product.price}]]*/,
+                /*[[${product.imageUrl}]]*/
+            );
+        });
+        /*]]>*/
+    </script>
+    </div>
+
+</head>
+<body id="home">
+<header class="header">
+    <div class="leftt">
+        <a th:href="@{/login}" id="login">Zaloguj się!</a>
+    </div>
+    <div class="RAJ container">
+        <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="300" height="100"></a>
+        <nav>
+            <ul class="menu">
+                <li><a class="menubutton" th:href="@{/category?category=Ubrania}">Ubrania</a></li>
+                <li><a class="menubutton" th:href="@{/category?category=Meble}">Meble</a></li>
+                <li><a class="menubutton" th:href="@{/category?category=Akcesoria}">Akcesoria</a></li>
+                <li><a class="menubutton" th:href="@{/category?category=Biżuteria}">Biżuteria</a></li>
+                <li><a class="menubutton" th:href="@{/home}">O nas</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="log">
+        <a th:href="@{/basket}"> <img th:src="@{img/wozek.png}" th:href="@{/basket}" alt="buttonpng" width="15" height="15"></a>
+        <a th:href="@{/basket}">0,00zł</a>
+    </div>
+</header>
+<div class="produkt">
+    <button onclick="addProductBox(4, 'Szafka RTV', '1590.29 zł.', 'produkty/półka.png')">Dodaj produkt</button>
+    <br>
+    <br>
+    <br>
+    <br>
+<section id="someElementId" class="flexbox">
+
+</section>
+    <br>
+    <br>
+
+    <div class="rounded-container">
+        <div class="image-container">
+            <img src="img/fotel.png" alt="Zdjęcie" style="width: 60%; height: auto; ">
+        </div>
+        <div class="text-container">
+            <p>Fotel RED STYLE to stylowy i wygodny mebel, <br>
+                który wspaniale wpasuje się w każde wnętrze <br>
+                urządzone w stylu retro, vintage lub boho. <br>
+                Charakteryzuje się on prostym i eleganckim designem oraz<br>
+                solidnym wykonaniem z trwałych materiałów.<br>
+                <br>
+                Fotel Vinted jest doskonałym wyborem dla <br>
+                osób ceniących sobie wygodę i stylowe dodatki<br>
+                do wnętrza. Idealnie sprawdzi się w salonie, <br>
+                pokoju gościnnym, gabinecie czy czytelni.</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <header class="header">
+        <footer class="footer">
+            <div class="card-footer">
+                <ul>
+                    <li>
+                        <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="250" height="100"></a>
+                    </li>
+                    <li>
+                        <p>
+                            O nas <br>
+                        </p>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="title-list">Informacje</li>
+                    <li><a href="/category">Ubrania</a></li>
+                    <li><a href="/category">Meble</a></li>
+                    <li><a href="/category">Akcesoria</a></li>
+                    <li><a href="/category">Biżuteria</a></li>
+                </ul>
+                <ul>
+                    <li class="title-list">Moje Konto</li>
+                    <li><a href="/login">Zaloguj</a></li>
+                    <li><a href="/login">Założ konto</a></li>
+
+                </ul>
+                <ul class="shops">
+                    <li class="title-list ">Kontakt</li>
+                    <li>hello@aukcjedomowe.pl</li>
+                    <li>Ul.pokoju243  <br>
+                        31-567 Kraków</li>
+                    <li>+48 22 567 88 76 39</li>
+                    <li>Odwiedź nas:</li>
+                </ul>
+            </div>
+
+            <p class="by-name">
+                &copy; Prawa autorskie 2023 Aukcje Domowe Wszelkie prawa zastrzeżone.
+            </p>
+        </footer>
+    </header>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+body {
+    margin: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #EBE7E4;
+    flex-wrap: wrap;
+}
+
+.leftt {
+    margin-left: 15%;
+}
+
+.RAJ.container {
+    text-align: center;
+}
+
+.log {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menubutton {
+    text-decoration: none;
+}
+.produkt{
+
+  }
+ .footer{
+
+     width: 80%;
+     margin: 5em auto 0;
+ }
+
+
+ .card-footer{
+
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+ }
+ ul{
+     padding: 0;
+ }
+ .card-footer ul li{
+     margin: 0.5em;
+     color: #6E6E6E;
+     list-style: none;
+ }
+ .card-footer ul li.title-list{
+     text-transform: uppercase;
+     color: black;
+     font-weight: 700;
+ }
+
+
+
+
+
+
+
+
+
+
+ .centr{
+ 	display: flex;
+ 	justify-content: center;
+
+   }
+
+ .login-panel {
+   max-width: 400px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #00000;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+ }
+
+ .login-form input {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+     width:380px;
+ }
+
+ .login-form button {
+   padding: 10px;
+   background-color: #007bff;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+    width:380px;
+ }
+
+ .social-login {
+   margin-top: 20px;
+    width:380px;
+    background: #0000;
+ }
+
+ .social-login p {
+   margin-bottom: 10px;
+     width:380px;
+ }
+
+ .social-login ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+ }
+
+ .social-login li {
+   margin-bottom: 10px;
+ }
+
+ .social-login a {
+   display: block;
+   width: 100%;
+   padding: 10px;
+   background-color: #007bff;
+   color: #fff;
+   border-radius: 5px;
+   text-align: center;
+   transition: background-color 0.3s ease;
+   text-decoration: none;
+     width:380px;
+ }
+
+ .social-login .facebook-login {
+   background-color: #1877f2;
+   width:380px;
+ }
+
+ .social-login .apple-login {
+   background-color: #000;
+   width:380px;
+ }
+
+ .social-login .google-login {
+   background-color: #FFFFFF;
+   width:380px;
+ }
+ .black-text {
+   color: #000 !important;
+ }
+
+
+ .social-login a:hover {
+   opacity: 0.8;
+     width:380px;
+ }
+ .login-form label {
+   color: #fff;
+     width:380px;
+ }
+ .lol {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+   margin-top: 15px;
+ }
+ .featured{
+     margin: 3em 0;
+     text-align: center;
+     text-transform: uppercase;
+ }
+ .featured span{
+     background-color: black;
+     color: white;
+ }
+
+ .aside{
+    display: none;
+ }
+ .box-container
+ {
+     flex-direction: column;
+ }
+ .stopka {
+   padding-left: 60px;
+
+   background: #35A294;
+   max-width: 70%;
+   max-height: 100%;
+   margin: 0 auto;
+   margin-top: 10px;
+   grid-gap: 10px;
+   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+ }
+
+ .stopka > div {
+   width: 100%;
+   padding: 10px;
+ }
+
+ .search-bar {
+   width: 70%;
+   height: 46px;
+   font-size: 24px;
+   padding: 10px;
+   margin-right: 20px;
+   border: 2px solid #ccc;
+
+ }
+ .search-btn {
+   width: 20%;
+   height: 70px;
+   font-size: 24px;
+   background-color: #000000;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+ }
+ .f-bg{
+     width: 100%;
+     background-color: #F0F0F0;
+
+ }
+ .footer{
+
+     width: 80%;
+     margin: 5em auto 0;
+ }
+
+
+ .card-footer{
+
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+ }
+ ul{
+     padding: 0;
+ }
+ .card-footer ul li{
+     margin: 0.5em;
+     color: #6E6E6E;
+     list-style: none;
+ }
+ .card-footer ul li.title-list{
+     text-transform: uppercase;
+     color: black;
+     font-weight: 700;
+ }
+
+ .by-name{
+     padding:1em 0 2em;
+     border-top: 1px solid black;
+     margin: 0;
+ }
+
+ .container2 {
+     transform: translateX(4em);
+     margin: 0 5em 0 7em;
+     width: 80%;
+     margin: auto;
+     display: flex;
+     align-items: center;
+  }
+ .box2 {
+     display: flex;
+     justify-content: center;
+     width: 50%;
+     }
+ .box3 {
+     margin-left: 3em;
+     flex-direction: column;
+     }
+
+ .article-two{
+     margin-left: 3em;
+     flex-direction: column;
+ }
+ .koniec > img {
+   max-width: 400px;
+   margin: 0 auto;
+ }

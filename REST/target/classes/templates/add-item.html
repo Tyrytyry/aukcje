@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{css/basket.css}"/>
+  <script th:src="@{/js/basket.js}" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body id="home">
+<header class="header">
+  <div class="leftt">
+    <a th:href="@{/login}" id="login">Zaloguj się!</a>
+  </div>
+  <div class="RAJ container">
+    <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="300" height="100"></a>
+    <nav>
+      <ul class="menu">
+        <li><a class="menubutton" th:href="@{/category?category=Ubrania}">Nasiona</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Meble}">Sadzonki</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Akcesoria}">Akcesoria</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Biżuteria}">Nawozy</a></li>
+        <li><a class="menubutton" th:href="@{/home}">O nas</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="log">
+    <a th:href="@{/basket}"> <img th:src="@{img/wozek.png}" th:href="@{/basket}" alt="buttonpng" width="15" height="15"></a>
+    <a th:href="@{/basket}">0,00zł</a>
+  </div>
+</header>
+
+
+<h1>Przesyłanie ogłoszenia</h1>
+
+
+<form method="post" th:action="@{/add-item}" th:object="${item}" enctype="multipart/form-data">
+  <label for="name">Nazwa:</label>
+  <input type="text" id="name" name="name" required/><br/>
+
+  <label for="price">Cena:</label>
+  <input type="number" id="price" name="price" required/><br/>
+
+  <div>
+    <label for="category">Kategoria:</label>
+    <select id="category" name="category" required>
+      <option value="Ubrania">Ubrania</option>
+      <option value="Meble">Meble</option>
+      <option value="Akcesoria">Akcesoria</option>
+      <option value="Biżuteria">Biżuteria</option>
+      <option value="Inne">Inne</option>
+    </select>
+  </div>
+
+
+  <label for="image">Zdjęcie:</label>
+  <input type="file" id="image" name="image" required/><br/>
+
+  <label for="days">Liczba dni:</label>
+  <input type="number" id="days" name="days" required/><br/>
+
+  <button type="submit">Dodaj</button>
+</form>
+
+</body>
+</html>
