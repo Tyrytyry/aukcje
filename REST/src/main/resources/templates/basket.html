@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{css/basket.css}"/>
+  <script th:src="@{/js/basket.js}" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <div th:each="product : ${sellerItems}">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function() {
+            addProductBox(
+                /*[[${product.id}]]*/,
+                /*[[${product.name}]]*/,
+                /*[[${product.price}]]*/,
+                /*[[${product.owner}]]*/,
+                /*[[${product.buyer}]]*/,
+                /*[[${product.imageUrl}]]*/
+
+            );
+        });
+        /*]]>*/
+    </script>
+  </div>
+  <div th:each="product : ${expiredItems}">
+  <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function() {
+            addProductBox2(
+                /*[[${product.id}]]*/,
+                /*[[${product.name}]]*/,
+                /*[[${product.price}]]*/,
+                /*[[${product.owner}]]*/,
+                /*[[${product.buyer}]]*/,
+                /*[[${product.imageUrl}]]*/
+            );
+        });
+        /*]]>*/
+    </script>
+  </div>
+
+  <div th:each="product : ${buyerItems}">
+  <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function() {
+            addProductBox3(
+                /*[[${product.id}]]*/,
+                /*[[${product.name}]]*/,
+                /*[[${product.price}]]*/,
+                /*[[${product.owner}]]*/,
+                /*[[${product.buyer}]]*/,
+                /*[[${product.imageUrl}]]*/
+            );
+        });
+        /*]]>*/
+    </script>
+  </div>
+
+
+</head>
+<body id="home">
+<header class="header">
+  <div class="leftt">
+    <a th:href="@{/login}" id="login">Zaloguj się!</a>
+  </div>
+  <div class="RAJ container">
+    <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="300" height="100"></a>
+    <nav>
+      <ul class="menu">
+        <li><a class="menubutton" th:href="@{/category?category=Ubrania}">Ubrania</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Meble}">Meble</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Akcesoria}">Akcesoria</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Biżuteria}">Biżuteria</a></li>
+        <li><a class="menubutton" th:href="@{/home}">O nas</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="log">
+    <a th:href="@{/basket}"> <img th:src="@{img/wozek.png}" th:href="@{/basket}" alt="buttonpng" width="15" height="15"></a>
+    <a th:href="@{/basket}">0,00zł</a>
+  </div>
+</header>
+
+
+<br>
+<br>
+<br>
+<div style="display:flex; justify-content:center; align-items:center;">
+  <div style="background-color: #35A194; width:200px; height:10px; margin-right:1cm; border-radius: 10px; display:flex; flex-direction: column; align-items:center;">
+    <p style="margin-bottom: 0; font-size: 10px;">Twój koszyk</p>
+    <p style="margin-top: 0; font-size: 10px;"><br></p>
+  </div>
+  <div style="background-color: white; width:200px; height:10px; border-radius: 10px; display:flex; flex-direction: column; align-items:center;">
+    <p style="margin-bottom: 0; font-size: 10px;">Dostawa i płatność</p>
+    <p style="margin-top: 0; font-size: 10px;"><br></p>
+  </div>
+  <div style="background-color: white; width:200px; height:10px; margin-left:1cm; border-radius: 10px; display:flex; flex-direction: column; align-items:center;">
+    <p style="margin-bottom: 0; font-size: 10px;">Gotowe</p>
+    <p style="margin-top: 0; font-size: 10px;"><br></p>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<button type="button" onclick="addProductBox('1', 'Marchew Berlikum', 5.29, 'produkty/roxana-kaboli-W0L2LbXoEQI-unsplash%201.png')">Dodaj produkt</button>
+
+
+
+<div class="containerrr">
+  <div id="someElementId" class="left">
+    <!-- zawartość koszyka -->
+
+  </div>
+  <div class="right">
+    <h2>Aktywne Aukcje</h2>
+  </div>
+</div>
+<br>
+<br>
+<div class="containerrr">
+  <div id="someElementId1" class="left">
+    <!-- zawartość koszyka -->
+
+  </div>
+  <div class="right">
+    <h2>Zakończone Aukcje</h2>
+      <p>Wartość produktów: <span id="total-value">0.00</span> zł</p>
+      <p>Dostawa: 20.00 zł</p>
+      <p>Suma: <span id="total-sum">0.00</span> zł</p>
+      <a th:href="@{/pay}" id="pay-button">Płacę</a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="containerrr">
+  <div id="someElementId2" class="left">
+    <!-- zawartość koszyka -->
+
+  </div>
+  <div class="right">
+    <h2>Twoje oferty</h2>
+
+    <br>
+    <br>
+    <br>
+    <h2>Dodaj nową aukcję</h2>
+    <a th:href="@{/add-item}" id="pay-button">dodaj nową aukcję</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<body>
+<h1>Lista przedmiotów</h1>
+
+<h2>Przedmioty sprzedającego:</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nazwa</th>
+    <th>Cena</th>
+    <th>Obrazek</th>
+    <th>Kategoria</th>
+    <th>Właściciel</th>
+    <th>Kupujący</th>
+    <th>Czas</th>
+  </tr>
+  <th:block th:each="item : ${sellerItems}">
+    <tr>
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.price}"></td>
+      <td th:text="${item.imageUrl}"></td>
+      <td th:text="${item.category}"></td>
+      <td th:text="${item.owner}"></td>
+      <td th:text="${item.buyer}"></td>
+      <td th:text="${item.time}"></td>
+    </tr>
+  </th:block>
+</table>
+
+<h2>Przedmioty kupującego:</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nazwa</th>
+    <th>Cena</th>
+    <th>Obrazek</th>
+    <th>Kategoria</th>
+    <th>Właściciel</th>
+    <th>Kupujący</th>
+    <th>Czas</th>
+  </tr>
+  <th:block th:each="item : ${buyerItems}">
+    <tr>
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.price}"></td>
+      <td th:text="${item.imageUrl}"></td>
+      <td th:text="${item.category}"></td>
+      <td th:text="${item.owner}"></td>
+      <td th:text="${item.buyer}"></td>
+      <td th:text="${item.time}"></td>
+    </tr>
+  </th:block>
+</table>
+
+<h2>Wygasłe przedmioty:</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nazwa</th>
+    <th>Cena</th>
+    <th>Obrazek</th>
+    <th>Kategoria</th>
+    <th>Właściciel</th>
+    <th>Kupujący</th>
+    <th>Czas</th>
+  </tr>
+  <th:block th:each="item : ${expiredItems}">
+    <tr>
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.price}"></td>
+      <td th:text="${item.imageUrl}"></td>
+      <td th:text="${item.category}"></td>
+      <td th:text="${item.owner}"></td>
+      <td th:text="${item.buyer}"></td>
+      <td th:text="${item.time}"></td>
+    </tr>
+  </th:block>
+</table>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<header class="header">
+  <footer class="footer">
+    <div class="card-footer">
+      <ul>
+        <li>
+          <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="250" height="100"></a>
+        </li>
+        <li>
+          <p>
+            O nas <br>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li class="title-list">Informacje</li>
+        <li><a href="/category">Ubrania</a></li>
+        <li><a href="/category">Meble</a></li>
+        <li><a href="/category">Akcesoria</a></li>
+        <li><a href="/category">Biżuteria</a></li>
+      </ul>
+      <ul>
+        <li class="title-list">Moje Konto</li>
+        <li><a href="/login">Zaloguj</a></li>
+        <li><a href="/login">Założ konto</a></li>
+
+      </ul>
+      <ul class="shops">
+        <li class="title-list ">Kontakt</li>
+        <li>hello@aukcjedomowe.pl</li>
+        <li>Ul.pokoju243  <br>
+          31-567 Kraków</li>
+        <li>+48 22 567 88 76 39</li>
+        <li>Odwiedź nas:</li>
+      </ul>
+    </div>
+
+    <p class="by-name">
+      &copy; Prawa autorskie 2023 Aukcje Domowe Wszelkie prawa zastrzeżone.
+    </p>
+  </footer>
+</header>
+
+
+</div>
+</body>
+</html>

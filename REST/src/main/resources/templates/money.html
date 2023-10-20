@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{css/basket.css}"/>
+  <script th:src="@{/js/basket.js}" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+<body id="home">
+<header class="header">
+  <div class="leftt">
+    <a th:href="@{/login}" id="login">Zaloguj się!</a>
+  </div>
+  <div class="RAJ container">
+    <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="300" height="100"></a>
+    <nav>
+      <ul class="menu">
+        <li><a class="menubutton" th:href="@{/category?category=Ubrania}">Ubrania</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Meble}">Meble</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Akcesoria}">Akcesoria</a></li>
+        <li><a class="menubutton" th:href="@{/category?category=Biżuteria}">Biżuteria</a></li>
+        <li><a class="menubutton" th:href="@{/home}">O nas</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="log">
+    <a th:href="@{/basket}"> <img th:src="@{img/wozek.png}" th:href="@{/basket}" alt="buttonpng" width="15" height="15"></a>
+    <a th:href="@{/basket}">0,00zł</a>
+  </div>
+</header>
+
+
+
+<br>
+<br>
+<br>
+<div style="display:flex; justify-content:center; align-items:center;">
+  <div style="background-color: #35A194; width:200px; height:10px; margin-right:1cm; border-radius: 10px; display:flex; flex-direction: column-reverse;">
+    <p><br></p>
+    <p>Twój koszyk</p>
+  </div>
+  <div style="background-color: #35A194; width:200px; height:10px; border-radius: 10px; display:flex; flex-direction: column-reverse;">
+    <p><br></p>
+    <p>Dostawa i płatność</p>
+  </div>
+  <div style="background-color: white; width:200px; height:10px; margin-left:1cm; border-radius: 10px; display:flex; flex-direction: column-reverse;">
+    <p><br></p>
+    <p>Gotowe</p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="left">
+    <!-- zawartość koszyka-------------------------------------- -->
+
+    <form method="POST" th:action="@{/orders}" th:object="${order}">
+
+
+      <div th:if="${#fields.hasErrors()}">
+        <span class="validationError">
+        BŁĄÐ
+        </span>
+      </div>
+
+      <h3>Płatność kartą</h3>
+      <!-- tag::validatedField[] -->
+      <label for="ccNumber">Numer karty kredytowej #: </label>
+      <input type="text" th:field="*{ccNumber}"/>
+      <!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('ccNumber')}"
+            th:errors="*{ccNumber}">CC Num Error</span>
+      <!-- tag::allButValidation[] -->
+      <!-- end::validatedField[] -->
+      <br/>
+
+      <label for="ccExpiration">Data ważności: </label>
+      <input type="text" th:field="*{ccExpiration}"/>
+      <!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('ccExpiration')}"
+            th:errors="*{ccExpiration}">CC Num Error</span>
+      <!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="ccCVV">Kod CVV: </label>
+      <input type="text" th:field="*{ccCVV}"/>
+      <!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('ccCVV')}"
+            th:errors="*{ccCVV}">CC Num Error</span>
+      <!-- tag::allButValidation[] -->
+      <br/>
+
+      <input type="submit" value="Submit order"/>
+    </form>
+
+    <!-- zawartość koszyka  --------------------------------------->
+  </div>
+  <div class="right">
+    <h2>Podsumowanie </h2>
+    <p>Wartość produktów: 100,00 zł</p>
+    <p>Razem: 120,00 zł</p>
+    <a th:href="@{/end}" id="pay-button">Płacę</a>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+<header class="header">
+  <footer class="footer">
+    <div class="card-footer">
+      <ul>
+        <li>
+          <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="250" height="100"></a>
+        </li>
+        <li>
+          <p>
+            O nas <br>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li class="title-list">Informacje</li>
+        <li><a href="/category">Ubrania</a></li>
+        <li><a href="/category">Meble</a></li>
+        <li><a href="/category">Akcesoria</a></li>
+        <li><a href="/category">Biżuteria</a></li>
+      </ul>
+      <ul>
+        <li class="title-list">Moje Konto</li>
+        <li><a href="/login">Zaloguj</a></li>
+        <li><a href="/login">Założ konto</a></li>
+
+      </ul>
+      <ul class="shops">
+        <li class="title-list ">Kontakt</li>
+        <li>hello@aukcjedomowe.pl</li>
+        <li>Ul.pokoju243  <br>
+          31-567 Kraków</li>
+        <li>+48 22 567 88 76 39</li>
+        <li>Odwiedź nas:</li>
+      </ul>
+    </div>
+
+    <p class="by-name">
+      &copy; Prawa autorskie 2023 Aukcje Domowe Wszelkie prawa zastrzeżone.
+    </p>
+  </footer>
+</header>
+
+
+</div>
+</body>
+</html>

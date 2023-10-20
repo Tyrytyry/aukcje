@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{css/login.css}"/>
+  <script th:src="@{/js/login.js}" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body id="home">
+<header class="header">
+  <div class="leftt">
+    <a th:href="@{/login}" id="login">Zaloguj się!</a>
+  </div>
+  <div class="RAJ container">
+    <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="300" height="100"></a>
+    <nav>
+      <ul class="menu">
+        <li><a class="menubutton" th:href="@{/category}">Ubrania</a></li>
+        <li><a class="menubutton" th:href="@{/category}">Meble</a></li>
+        <li><a class="menubutton" th:href="@{/category}">Akcesoria</a></li>
+        <li><a class="menubutton" th:href="@{/category}">Biżuteria</a></li>
+        <li><a class="menubutton" th:href="@{/category}">O nas</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="log">
+    <a th:href="@{/basket}"> <img th:src="@{img/wozek.png}" th:href="@{/basket}" alt="buttonpng" width="15" height="15"></a>
+    <a th:href="@{/basket}">0,00zł</a>
+  </div>
+</header>
+<br>
+<br>
+<div class="centr">
+<div class="login-panel" id="loginPanel">
+  <div class="social-login">
+    <p>Lub zaloguj się za pomocą:</p>
+    <ul>
+      <li>
+        <a href="#" class="facebook-login">
+          Kontynuuj z Facebook
+        </a>
+      </li>
+      <li>
+        <a href="#" class="apple-login">
+          Kontynuuj z Apple
+        </a>
+      </li>
+      <li>
+        <a href="#" class="google-login black-text">
+          Kontynuuj z Google
+        </a>
+      </li>
+    </ul>
+  </div>
+  <h2>Zaloguj się</h2>
+  <form class="login-form" method="post" role="form" th:action="@{/login}">
+    <div class="form-group mb-3">
+      <label class="control-label">Email</label>
+      <input type="text" id="username" name="username" class="form-control" placeholder="Enter email address" />
+    </div>
+    <div class="form-group mb-3">
+      <label class="control-label">Password</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" />
+    </div>
+    <div class="form-group mb-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <br>
+  <button class="lol" type="submit"onclick="changeForm()">ZAREJESTRUJ SIĘ DO RAJ ROŚLIN</button>
+</div>
+
+
+
+  <div class="login-panel" id="registerPanel" style="display:none;">
+    <div class="social-login">
+      <p>Lub zaloguj się za pomocą:</p>
+      <ul>
+        <li>
+          <a href="#" class="facebook-login">
+            Kontynuuj z Facebook
+          </a>
+        </li>
+        <li>
+          <a href="#" class="apple-login">
+            Kontynuuj z Apple
+          </a>
+        </li>
+        <li>
+          <a href="#" class="google-login black-text">
+            Kontynuuj z Google
+          </a>
+        </li>
+      </ul>
+    </div>
+    <h2>Załóż konto </h2>
+    <form
+            method="post"
+            role="form"
+            th:action="@{/login/save}"
+            th:object="${user}"
+    >
+      <div class="form-group mb-3">
+        <label class="form-label">First Name</label>
+        <input
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter first name"
+                th:field="*{firstName}"
+                type="text"
+        />
+        <p th:errors = "*{firstName}" class="text-danger"
+           th:if="${#fields.hasErrors('firstName')}"></p>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Last Name</label>
+        <input
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter last name"
+                th:field="*{lastName}"
+                type="text"
+        />
+        <p th:errors = "*{lastName}" class="text-danger"
+           th:if="${#fields.hasErrors('lastName')}"></p>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Email</label>
+        <input
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter email address"
+                th:field="*{email}"
+                type="email"
+        />
+        <p th:errors = "*{email}" class="text-danger"
+           th:if="${#fields.hasErrors('email')}"></p>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Password</label>
+        <input
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter password"
+                th:field="*{password}"
+                type="password"
+        />
+        <p th:errors = "*{password}" class="text-danger"
+           th:if="${#fields.hasErrors('password')}"></p>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Register</button>
+        <span>Already registered? <a th:href="@{/login}">Login here</a></span>
+      </div>
+    </form>
+    <br>
+    <button class="lol" type="submit" onclick="changeForm()">MASZ KONTO SIĘ DO RAJ ROŚLIN?</button>
+  </div>
+
+
+</div>
+<br>
+<br>
+
+</body>
+
+<br>
+<br>
+<header class="header">
+  <footer class="footer">
+    <div class="card-footer">
+      <ul>
+        <li>
+          <a th:href="@{/home}"> <img th:src="@{img/AukcjeDomowe.png}" th:href="@{/home}" alt="Aukcje Domowe" width="250" height="100"></a>
+        </li>
+        <li>
+          <p>
+            O nas <br>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li class="title-list">Informacje</li>
+        <li><a href="/category">Ubrania</a></li>
+        <li><a href="/category">Meble</a></li>
+        <li><a href="/category">Akcesoria</a></li>
+        <li><a href="/category">Biżuteria</a></li>
+      </ul>
+      <ul>
+        <li class="title-list">Moje Konto</li>
+        <li><a href="/login">Zaloguj</a></li>
+        <li><a href="/login">Założ konto</a></li>
+
+      </ul>
+      <ul class="shops">
+        <li class="title-list ">Kontakt</li>
+        <li>hello@aukcjedomowe.pl</li>
+        <li>Ul.pokoju243  <br>
+          31-567 Kraków</li>
+        <li>+48 22 567 88 76 39</li>
+        <li>Odwiedź nas:</li>
+      </ul>
+    </div>
+
+    <p class="by-name">
+      &copy; Prawa autorskie 2023 Aukcje Domowe Wszelkie prawa zastrzeżone.
+    </p>
+  </footer>
+</header>
+
+
+</div>
+</body>
+</html>

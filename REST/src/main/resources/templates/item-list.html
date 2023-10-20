@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Item List</title>
+</head>
+<body>
+<h1>Item List</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Image URL</th>
+    <th>Category</th>
+    <th>Owner</th>
+    <th>Buyer</th>
+    <th>Time</th>
+  </tr>
+  <tr th:each="item : ${items}">
+    <td th:text="${item.id}"></td>
+    <td th:text="${item.name}"></td>
+    <td th:text="${item.price}"></td>
+    <td th:text="${item.imageUrl}"></td>
+    <td th:text="${item.category}"></td>
+    <td th:text="${item.owner}"></td>
+    <td th:text="${item.buyer}"></td>
+    <td th:text="${item.time}"></td>
+  </tr>
+</table>
+
+<form method="post" action="/delete-item">
+  <input type="text" name="itemId" placeholder="Wpisz ID produktu" />
+  <button type="submit">Usuń produkt</button>
+</form>
+
+<form method="post" action="/add-items" th:object="${itemForm}">
+  <div>
+    <label for="name">Nazwa produktu:</label>
+    <input type="text" id="name" name="name" />
+  </div>
+  <div>
+    <label for="price">Cena:</label>
+    <input type="number" id="price" name="price" />
+  </div>
+  <div>
+    <label for="imageUrl">URL obrazka:</label>
+    <input type="text" id="imageUrl" name="imageUrl" />
+  </div>
+  <div>
+    <label for="category">Kategoria:</label>
+    <input type="text" id="category" name="category" />
+  </div>
+  <div>
+    <label for="owner">Właściciel:</label>
+    <input type="text" id="owner" name="owner" />
+  </div>
+  <div>
+    <label for="buyer">Kupujący:</label>
+    <input type="text" id="buyer" name="buyer" />
+  </div>
+  <button type="submit">Dodaj produkt</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #EBE7E4;
+    flex-wrap: wrap;
+}
+
+.leftt {
+    margin-left: 15%;
+}
+
+.RAJ.container {
+    text-align: center;
+}
+
+.log {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menubutton {
+    text-decoration: none;
+}
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 0 auto;
+  background: #a3a2a2;
+}
+
+.cart-item img {
+  width: 150px;
+  height: 150px;
+  margin-right: 1rem;
+}
+
+.cart-item h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+table {
+  margin-left: auto;
+}
+
+.cart-item .product-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cart-item .top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.cart-item .bottom-row {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+
+
+.cart-item .last-bidder {
+  font-size: 14px;
+  margin: 0 10px 0 0;
+  color: #888;
+}
+
+.cart-item .quantity {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item .quantity input {
+  width: 120px;
+  height: 30px;
+  margin-right: 10px;
+
+}
+
+.cart-item .quantity button {
+  padding: 5px 10px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+      .containerrr {
+    transform: translateX(4em);
+    margin: 0 5em 0 7em;
+    width: 80%;
+    margin: auto;
+    display: flex;
+  #  align-items: center;
+    background-color: #E4EBE4;
+      }
+ .left {
+        width: 70%;
+        background-color: #dcdcdc;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .right {
+        width: 30%;
+        background-color: #dcdcdc;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-left: 10px;
+
+      }
+      .right h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+      .right p {
+        margin: 5px 0;
+      }
+      .right button {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+
+
+
+
+.rounded-container {
+  display: flex;
+  overflow: hidden;
+  height: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px;
+  background-color: lightgray;
+}
+
+.image-container {
+  flex: 1;
+  padding: 20px;
+  background-color: lightgray;
+    padding-left: 100px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+.footer{
+
+    width: 80%;
+    margin: 5em auto 0;
+}
+
+
+.card-footer{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul{
+    padding: 0;
+}
+.card-footer ul li{
+    margin: 0.5em;
+    color: #6E6E6E;
+    list-style: none;
+}
+.card-footer ul li.title-list{
+    text-transform: uppercase;
+    color: black;
+    font-weight: 700;
+}
+
+.by-name{
+    padding:1em 0 2em;
+    border-top: 1px solid black;
+    margin: 0;
+}
+.box button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+ }
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button {
+  width: 200px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+
+table {
+  margin-left: auto;
+}
+
+.qty-btn {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.qty-btn.plus {
+  margin-left: 0.5rem;
+}
+
+.qty-btn.minus:disabled,
+.qty-btn.plus:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.qty {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+#pay-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #376730; /* Zmieniamy na kolor zielony */
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#pay-button:hover {
+  background-color: #285625; /* Zmieniamy na ciemniejszy odcień zielonego */
+}
